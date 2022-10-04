@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn0">
+        <img id="Tout" src="https://img.icons8.com/ios-filled/1000/000000/german-house.png"/><p class="text_button">Tout</p></button>
+      </button>
+      <button id="btn1">
+        <img id="Anthologies" src="https://img.icons8.com/ios-filled/1000/000000/german-house.png"/><p class="text_button">Anthologies</p></button>
+      <button id="btn2" >
+        <img id="Romans" src="https://img.icons8.com/glyph-neue/1000/000000/wolf.png"/><p class="text_button">Romans</p></button>
+      <button id="btn3">
+        <img id="Autres" src="https://img.icons8.com/ios-filled/1000/000000/full-body-crow.png"/><p class="text_button">Autres</p></button>
+    <script>
+        var socket = io.connect();
+        console.log(socket);
+
+        window.addEventListener('load',()=>{
+    let btn0=document.getElementById('Tout');
+    let btn1=document.getElementById('Anthologies');
+    let btn2=document.getElementById('Romans');
+    let btn3=document.getElementById('Autres');
+
+    btn0.addEventListener('click',(e)=>{
+        
+        let x =e.target.id;
+        console.log("cliqué",x);
+        socket.emit('event',({x}))
+    })
+    btn1.addEventListener('click',(e)=>{
+        let x =e.target.id;
+        console.log("cliqué",x);
+        socket.emit('event',({x}))
+    })
+    btn2.addEventListener('click',(e)=>{
+        let x =e.target.id;
+        console.log("cliqué",x);
+        socket.emit('event',({x}))
+    })
+    btn3.addEventListener('click',(e)=>{
+        let x =e.target.id;
+        console.log("cliqué",x);
+        socket.emit('event',({x}))
+    })
+
+});
+    </script>
+    page accueil
+</body>
+</html>
