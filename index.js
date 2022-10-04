@@ -17,6 +17,7 @@ io.on("connection",(socket)=>{
         // socket.emit('three',({products}))
     });
 });
+console.log("lol");
 
 
 app.get('/',(req,res)=>{
