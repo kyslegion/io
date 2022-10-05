@@ -14,6 +14,11 @@ app.set('views', path.join(__dirname, './views'))
 io.on("connection",(socket)=>{
     socket.on('event',(event)=>{
         console.log(event);
+        app.get('/cata',(req,res)=>{
+            res.render('catalogue', {
+                event:event
+            });
+        });
         // socket.emit('three',({products}))
     });
 });
