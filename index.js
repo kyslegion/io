@@ -13,7 +13,11 @@ app.use(express.static(__dirname + '/style'))
 app.use(express.static(__dirname + '/'))
 app.use(express.static(__dirname + '/views'))
 
+require('dotenv').config()
+const mysql = require('mysql2')
+const con= mysql.createConnection(process.env.DATABASE_URL)
 
+console.log(con);
 io.on("connection",(socket)=>{
     socket.on('event',(event)=>{
         console.log(event);
