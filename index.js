@@ -10,6 +10,7 @@ let io = require('socket.io')(http);
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, './views'))
 app.use(express.static(__dirname + '/style'))
+app.use(express.static(__dirname + '/'))
 
 
 io.on("connection",(socket)=>{
